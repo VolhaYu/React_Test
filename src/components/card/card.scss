@@ -1,0 +1,43 @@
+.card {
+  width: 262px;
+  height: 350px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='%23414141FF' stroke-width='1' stroke-dasharray='10' stroke-dashoffset='14' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 20px;
+  margin: 0 auto 50px;
+} 
+.wrap-img {
+  width: 230px;
+  max-width: 100%;
+  padding: 5px;
+}
+.img {
+  max-width: 100%;
+}
+.wrap-content {
+  text-align: left;
+
+}
+.title {
+  font-size: 20px;
+  color: #414141;
+  margin-bottom: 16px;
+}
+.content-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #414141;
+
+}
+.icon {
+  background-color: #FFCC26;
+  color: #FBFBFB;
+}

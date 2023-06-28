@@ -1,0 +1,8 @@
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // width: 70%;
+  height: calc(100vh - 64px);
+  overflow: auto;
+}

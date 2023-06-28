@@ -2,8 +2,10 @@ import React from 'react';
 
 function ProductDetailsPage() {
   return (
-    <main>
-      <h1 className="center">ProductDetailsPage</h1>
+    <main className="main">
+      <div className="container">
+        <h1 className="center">ProductDetailsPage</h1>
+      </div>
     </main>
   );
 }
