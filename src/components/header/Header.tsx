@@ -11,7 +11,7 @@ function Header() {
     if (location.pathname.split('/')[1] === '') {
       pageName = 'PRODUCT LIST PAGE';
     }
-    if (location.pathname.split('/')[1] === 'form') {
+    if (location.pathname.split('/')[1] === 'details') {
       pageName = 'PRODUCT PAGE';
     }
     return pageName;

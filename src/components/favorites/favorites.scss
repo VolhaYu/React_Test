@@ -1,6 +1,12 @@
 .wrap-favorites {
   width: 408px;
   height: 880px;
+  overflow: auto;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='%23414141FF' stroke-width='2' stroke-dasharray='10' stroke-dashoffset='14' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 20px;
+  padding: 30px 20px;
+  text-align: left;
+}
+.h3-favorites {
+  margin-bottom: 16px;
 }

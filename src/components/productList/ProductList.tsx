@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Grid } from '@material-ui/core';
 // import AutoSizer from 'react-virtualized-auto-sizer';
 import { Product, baseUrl, AllProducts } from '../../api/api';
 import './ProductList.scss';
 import CardItem from '../card/Card';
+import { useGlobalState } from '../../state';
 
 function ProductList() {
+  const [products, update] = useGlobalState('products');
   const [result, setResult] = useState<[Product]>();
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
@@ -21,6 +22,7 @@ function ProductList() {
       .then((data) => {
         if (!result) {
           setResult(data);
+          update(() => data);
         }
         setIsPending(false);
         setError(null);
@@ -29,7 +31,7 @@ function ProductList() {
         setError(err.message);
         setIsPending(false);
       });
-  }, [result]);
+  }, [result, setResult]);
 
   return (
     <>
@@ -40,6 +42,8 @@ function ProductList() {
           !error &&
           result.map((data: Product) => (
             <CardItem
+              className="card"
+              id={data.id}
               key={data.id}
               src={`${baseUrl}${data.src}`}
               name={data.name}
@@ -52,20 +56,3 @@ function ProductList() {
 }
 
 export default ProductList;
-
-// {
-//   <Grid container>
-//         {result &&
-//           !error &&
-//           result.map((data: Product) => (
-//             <Grid item xs={3}>
-//               <CardItem
-//                 key={data.id}
-//                 src={`${baseUrl}${data.src}`}
-//                 name={data.name}
-//                 price={data.price}
-//               />
-//             </Grid>
-//           ))}
-//       </Grid>
-// }
