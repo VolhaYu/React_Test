@@ -2,8 +2,6 @@ import { createGlobalState } from 'react-hooks-global-state';
 import { Product } from '../api/api';
 
 type State = {
-  // likesId: { string: Product }[];
-  // likesId: Set<string>;
   likesId: string[];
   favoriteCard: Product[];
   products: Product[];

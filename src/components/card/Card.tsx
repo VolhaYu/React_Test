@@ -17,6 +17,7 @@ function CardItem({ src, name, price, id, className }: Product) {
   const [favoritCard, setFavoritCard] = useGlobalState('favoriteCard');
   const [products] = useGlobalState('products');
   const [cardId, setCardId] = useGlobalState('cardDetails');
+  // let isLike = false;
 
   const onClick = (e: React.SyntheticEvent) => {
     setCardId(e.currentTarget.id);
@@ -24,17 +25,17 @@ function CardItem({ src, name, price, id, className }: Product) {
   };
 
   const HendleFavorite = (e: React.SyntheticEvent) => {
-    e.currentTarget.classList.toggle('icon-active');
-    const like = e.currentTarget;
-    console.log(like);
+    // e.currentTarget.classList.toggle('icon-active');
+    const like = e.currentTarget as HTMLElement;
     const currentId = e.currentTarget.id;
     if (!likesId.includes(currentId)) {
-      // like.style.color = 'black';
+      like.style.color = '#414141';
       products.forEach((item) => {
         item.id === +currentId ? setFavoritCard(() => [...favoritCard, item]) : item;
       });
       setLikesId(() => [...likesId, currentId]);
     } else {
+      like.style.color = '#FBFBFB';
       const idRemove = likesId.indexOf(currentId);
       const copy = [...likesId];
       copy.splice(idRemove, 1);
