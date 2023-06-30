@@ -1,5 +1,4 @@
 export const baseUrl = 'https://testbackend.nc-one.com';
-export const AllProducts = `${baseUrl}/image`;
 
 export interface Product {
   id: number;

@@ -1,4 +1,3 @@
-import React from 'react';
 import './favorites.scss';
 import { useGlobalState } from '../../state/index';
 import CardItem from '../card/Card';

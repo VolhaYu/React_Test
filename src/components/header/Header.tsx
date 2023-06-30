@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './Header.scss';
 import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';

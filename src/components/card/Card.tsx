@@ -12,7 +12,7 @@ function CardItem({ src, name, price, id, className }: Product) {
   const [likesId, setLikesId] = useGlobalState('likesId');
   const [favoritCard, setFavoritCard] = useGlobalState('favoriteCard');
   const [products] = useGlobalState('products');
-  const [cardId, setCardId] = useGlobalState('cardDetails');
+  const [, setCardId] = useGlobalState('cardDetails');
 
   const onClick = (e: React.SyntheticEvent) => {
     setCardId(e.currentTarget.id);

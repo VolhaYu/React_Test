@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useGlobalState } from '../../state/index';
-import { AllProducts, Product, baseUrl } from '../../api/api';
+import { Product, baseUrl } from '../../api/api';
 import CardItem from '../card/Card';
 
 function ProductDetails() {
   const navigate = useNavigate();
   const [cardId] = useGlobalState('cardDetails');
-  const cardDetailsUrl = `${AllProducts}?id=${cardId}`;
+  const cardDetailsUrl = `${baseUrl}/image?id=${cardId}`;
 
   const [result, setResult] = useState<Product>();
   const [isPending, setIsPending] = useState(true);

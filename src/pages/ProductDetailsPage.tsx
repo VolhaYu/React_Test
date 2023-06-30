@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Grid } from '@material-ui/core';
 import Favorites from '../components/favorites/Favorites';
 import ProductDetails from '../components/productDetails/ProductDetails';

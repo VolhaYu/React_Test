@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container } from '@material-ui/core';
 import { Grid } from '@mui/material';
 import ProductList from '../components/productList/ProductList';

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FixedSizeGrid as Grid } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { Product, baseUrl, AllProducts } from '../../api/api';
+import { Product, baseUrl } from '../../api/api';
 import './ProductList.scss';
 import CardItem from '../card/Card';
 import { useGlobalState } from '../../state';
 
 function ProductList() {
-  const [products, update] = useGlobalState('products');
+  const [, update] = useGlobalState('products');
   const [result, setResult] = useState<[Product]>();
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
+  const AllProducts = `${baseUrl}/image`;
 
   useEffect(() => {
     fetch(`${AllProducts}`)
@@ -32,7 +33,7 @@ function ProductList() {
         setError(err.message);
         setIsPending(false);
       });
-  }, [result, setResult, update]);
+  }, [AllProducts, result, setResult, update]);
 
   return (
     <AutoSizer>
