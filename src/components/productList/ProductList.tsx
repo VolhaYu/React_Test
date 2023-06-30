@@ -35,42 +35,40 @@ function ProductList() {
   }, [result, setResult, update]);
 
   return (
-    <>
-      {isPending && <div className="loading">Loading...</div>}
-      {error && <div className="error">{error}</div>}
-      <div className="product-list">
-        {result &&
-          !error &&
-          result.map((data: Product) => (
-            <CardItem
-              className="card"
-              id={data.id}
-              key={data.id}
-              src={`${baseUrl}${data.src}`}
-              name={data.name}
-              price={data.price}
-            />
-          ))}
-      </div>
-    </>
+    <AutoSizer>
+      {({ height, width }) => (
+        <Grid
+          columnCount={1}
+          rowCount={1}
+          columnWidth={1153}
+          rowHeight={1248}
+          height={height}
+          width={width}
+        >
+          {() => (
+            <>
+              {isPending && <div className="loading">Loading...</div>}
+              {error && <div className="error">{error}</div>}
+              <div className="product-list">
+                {result &&
+                  !error &&
+                  result.map((data: Product) => (
+                    <CardItem
+                      className="card"
+                      id={data.id}
+                      key={data.id}
+                      src={`${baseUrl}${data.src}`}
+                      name={data.name}
+                      price={data.price}
+                    />
+                  ))}
+              </div>
+            </>
+          )}
+        </Grid>
+      )}
+    </AutoSizer>
   );
 }
-
-export const Example = () => (
-  <AutoSizer>
-    {({ height, width }) => (
-      <Grid
-        columnCount={1}
-        rowCount={1}
-        columnWidth={1153}
-        rowHeight={1248}
-        height={height}
-        width={width}
-      >
-        {ProductList}
-      </Grid>
-    )}
-  </AutoSizer>
-);
 
 export default ProductList;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
 import { Grid } from '@mui/material';
-import ProductList, { Example } from '../components/productList/ProductList';
+import ProductList from '../components/productList/ProductList';
 import Favorites from '../components/favorites/Favorites';
 
 function ProductListPage() {
@@ -13,8 +13,7 @@ function ProductListPage() {
             <Favorites />
           </Grid>
           <Grid item xs={8} height={1153}>
-            <Example />
-            {/* <ProductList /> */}
+            <ProductList />
           </Grid>
         </Grid>
       </Container>
