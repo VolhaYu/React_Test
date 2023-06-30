@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useGlobalState } from '../../state/index';
 import { AllProducts, Product, baseUrl } from '../../api/api';
 import CardItem from '../card/Card';
 
 function ProductDetails() {
+  const navigate = useNavigate();
   const [cardId] = useGlobalState('cardDetails');
   const cardDetailsUrl = `${AllProducts}?id=${cardId}`;
 
@@ -35,6 +38,13 @@ function ProductDetails() {
 
   return (
     <>
+      <div style={{ textAlign: 'end' }}>
+        <ArrowForwardIcon
+          className="arrow"
+          sx={{ width: '100px', height: '50px' }}
+          onClick={() => navigate('/')}
+        />
+      </div>
       {isPending && <div className="loading">Loading...</div>}
       {error && <div className="error">{error}</div>}
       {result && !error && (

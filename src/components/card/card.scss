@@ -1,5 +1,6 @@
 .card {
   width: 262px;
+  max-width: 100%;
   height: 350px;
   padding: 20px;
   display: flex;
@@ -18,12 +19,9 @@
 .img {
   max-width: 100%;
 }
-.zoom-icon {
-  display: none;
-}
 .wrap-content {
   text-align: left;
-
+  max-width: 100%;
 }
 .title {
   font-size: 20px;
@@ -83,6 +81,7 @@
 
 .card-favorite {
   width: 347px;
+  max-width: 100%;
   height: 130px;
   display: flex;
   justify-content: center;
@@ -91,12 +90,11 @@
 }
 .card-favorite .wrap-img {
   width: 108px;
+  max-width: 100%;
   height: 108px;
   margin-right: 10px;
 }
-// .card-favorite .icon {
-//   color: #414141;
-// } 
 .card-favorite .wrap-content {
   width: 184px;
+  max-width: 100%;
 }

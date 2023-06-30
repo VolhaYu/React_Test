@@ -2,6 +2,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: calc(100vh - 64px);
-  overflow: auto;
+  max-width: 1200px;
+  height: calc(100vh - 164px);
 }

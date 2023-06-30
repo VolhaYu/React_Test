@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// import AutoSizer from 'react-virtualized-auto-sizer';
+import { FixedSizeGrid as Grid } from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer';
 import { Product, baseUrl, AllProducts } from '../../api/api';
 import './ProductList.scss';
 import CardItem from '../card/Card';
@@ -31,7 +32,7 @@ function ProductList() {
         setError(err.message);
         setIsPending(false);
       });
-  }, [result, setResult]);
+  }, [result, setResult, update]);
 
   return (
     <>
@@ -54,5 +55,22 @@ function ProductList() {
     </>
   );
 }
+
+export const Example = () => (
+  <AutoSizer>
+    {({ height, width }) => (
+      <Grid
+        columnCount={1}
+        rowCount={1}
+        columnWidth={1153}
+        rowHeight={1248}
+        height={height}
+        width={width}
+      >
+        {ProductList}
+      </Grid>
+    )}
+  </AutoSizer>
+);
 
 export default ProductList;

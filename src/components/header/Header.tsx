@@ -18,7 +18,7 @@ function Header() {
   }
 
   return (
-    <AppBar position="static" style={{ background: '#FFCC26' }}>
+    <AppBar position="static" className="appbar" style={{ background: '#FFCC26' }}>
       <Container maxWidth="xl">
         <Toolbar variant="regular" className="toolbar">
           <Typography variant="h4" color="textPrimary">

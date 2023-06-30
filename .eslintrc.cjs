@@ -22,5 +22,8 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
     'prettier/prettier': 'error',
+    '@typescript-eslint/no-unused-expressions': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
   },
 };

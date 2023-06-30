@@ -7,7 +7,10 @@ function NotFound() {
       <div className="container">
         <h1 className="center">404</h1>
         <h2 className="center">Page Not Found</h2>
-        <Link to="/"> Home </Link>
+        <Link to="/" style={{ color: '#414141', fontSize: '24px' }}>
+          {' '}
+          Home{' '}
+        </Link>
       </div>
     </main>
   );
